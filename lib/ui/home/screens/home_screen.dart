@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_knovator/bloc/post_bloc/post_bloc.dart';
 import 'package:task_knovator/ui/home/widgets/post.dart';
 
-import '../../../bloc/post_detail_bloc/post_detail_bloc.dart';
 import '../../../core/widgets/exception_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,9 +11,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Home'),
-      // ),
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
       body: BlocBuilder<PostBloc, PostState>(
         builder: (context, state) {
           if (state is PostsLoading) {
