@@ -43,6 +43,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       // Store data to local
       // log('Storing data to local');
       localDb.storeToLocal(networkResult);
+      await Future.delayed(const Duration(seconds: 1));
 
       localResult = await localDb.getPosts();
       emit(PostsLoaded(posts: localResult));
